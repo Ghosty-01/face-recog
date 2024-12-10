@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function validateLogin(event) {
+      // Prevent form from submitting
+      event.preventDefault();
+      
+      // Hardcoded correct username and password for demonstration
+      const correctUsername = "user";
+      const correctPassword = "password123";
+      
+      // Get the input values
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      
+      // Check if the username and password match
+      if (username === correctUsername && password === correctPassword) {
+        // Redirect to the next page (e.g., dashboard.html)
+        window.location.href = "home.html"; // Change this to your target page
+      } else {
+        // Show an error message if the credentials are incorrect
+        alert("Incorrect username or password. Please try again.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form onsubmit="validateLogin(event)">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      
+      <button type="submit" class="btn">Login</button>
+      
+      <div class="forgot-password">
+        <a href="#">Forgot password?</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
